@@ -34,11 +34,20 @@ public class EventService {
 		return eventRepo.findAll();
 	}
 	
-	public Optional<Event> findOne(Long id){
+	public Optional<Event> findById(Long id){
 		return eventRepo.findById(id);
 	}
 	
 	public void delete(Event event) {
+		if(event == null) {
+			LOGGER.log(Level.SEVERE, "Attender is null");
+			return;
+			
+		}
 		eventRepo.delete(event);
+	}
+	
+	public Long count() {
+		return eventRepo.count();
 	}
 }
