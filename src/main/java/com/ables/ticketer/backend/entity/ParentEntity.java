@@ -1,6 +1,6 @@
 package com.ables.ticketer.backend.entity;
 
-public abstract class Entity {
+public abstract class ParentEntity {
 	private Long id;
 
 	public Long getId() {
@@ -33,7 +33,7 @@ public abstract class Entity {
 		if(getClass() != obj.getClass())
 			return false;
 		
-		Entity entity = (Entity) obj;
+		ParentEntity entity = (ParentEntity) obj;
 		if(getId() == null || entity.getId() == null)
 			return false;
 		return getId().equals(entity.getId());
